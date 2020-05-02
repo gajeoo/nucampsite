@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
-    <link rel="stylesheet" href="css/style.css" />
+   <!-- build:css css/main.css -->
+   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+   <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+   <link rel="stylesheet" href="css/styles.css" />
+   <!-- endbuild -->
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
 
     <title>NuCamp: A Better Way To Camp</title>
 </head>
@@ -31,7 +32,7 @@
                 </div>
                 <div class="col-md-4 mt-4 col-xl-2">
                     <!-- <a  role="button" class="btn btn-lg btn-info">Reserve Campsite</a> -->
-                    <a role="button" data-toggle="modal" data-target="#reserveModal" class="btn btn-lg btn-info">Reserve Campsite</a> 
+                    <a role="button" id="reserveButton" class="btn btn-lg btn-info">Reserve Campsite</a> 
                     
                 </div>
             </div> 
@@ -49,7 +50,7 @@
                         <form>
                             <div class="form-group row">
                                 <label for="numCampers" class="col-sm-6 col-form-label">Number of Campers</label>
-                                <div class="col-sm">
+                                <div class="col">
                                     <select name="numCampers" id="numCampers" class="form-control">
                                         <option selected>Select...</option>
                                         <option value="1">one</option>
@@ -114,7 +115,7 @@
                                 class="fa fa-address-card fa-lg"></i> Contact</a></li>
                 </ul>
                 <span class="navbar-text ml-auto">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginButton">
                     <i class="fa fa-sign-in"></i> Login</a>
                 </span>
             </div>
@@ -199,7 +200,11 @@
                             <span class="carousel-control-next-icon"></span>
                             <span class="sr-only">Next</span>
                         </a> 
-                </div>
+                     
+                         <button class="btn btn-danger btn-sm" id="carouselButton">
+                             <i class="fa fa-pause"></i>
+                         </button>
+              </div>
             </div>
         </div>
         <div class="row row-content align-items-center">
@@ -337,9 +342,14 @@
     </footer>
 
     <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+
+<!-- build:js js/main.js -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+<!-- endbuild -->
+    
 
     <!-- <script>
         $(function () {
